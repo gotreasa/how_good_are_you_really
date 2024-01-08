@@ -12,8 +12,11 @@ def describe_better_than_average():
         """🧪 should give an error message if your score is not an integer"""
         with pytest.raises(ValueError, match="❗️ My score should be an integer"):
             how_good_are_you_really.better_than_average([2, 3], 50.0)
-            how_good_are_you_really.better_than_average("blah", 50)
 
     def should_return_true_when_score_is_5_and_above_average():
         """🧪 should return true if your score is 5 and the class scores are 2, 3"""
         assert how_good_are_you_really.better_than_average([2, 3], 5)
+
+    def should_return_false_when_score_is_2_and_below_average():
+        """🧪 should return false if your score is 2 and the class scores are 2, 3"""
+        assert how_good_are_you_really.better_than_average([2, 3], 2) == False
