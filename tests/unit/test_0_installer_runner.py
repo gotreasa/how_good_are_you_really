@@ -23,4 +23,8 @@ def describe_better_than_average():
 
     def should_return_true_when_score_is_80_and_above_average():
         """🧪 should return true if your score is 80 and the class scores are 50 and 70"""
-        assert how_good_are_you_really.better_than_average([50, 70], 80) == True
+        assert how_good_are_you_really.better_than_average([50, 70], 80)
+
+    def should_return_false_when_score_is_50_and_is_average():
+        """🧪 should return false if your score is 50 and the class scores are 50, 50 and 50"""
+        assert how_good_are_you_really.better_than_average([50, 50, 50], 50) == False
